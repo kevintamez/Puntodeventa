@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/PuntoDeVenta">
+<Resource auth="Container" 
+            driverClassName="com.mysql.jdbc.Driver" 
+            logAbandoned="true" 
+            maxActive="100" 
+            maxIdle="30" 
+            name="jdbc/PuntoDeVenta" 
+            password="admin" 
+            removeAbandoned="true" 
+            removeAbandonedTimeout="60" 
+            type="javax.sql.DataSource" 
+            url="jdbc:mysql://localhost:3306/demo_mvc?autoReconnect=true" 
+            username="kevin"/>
+</Context>
