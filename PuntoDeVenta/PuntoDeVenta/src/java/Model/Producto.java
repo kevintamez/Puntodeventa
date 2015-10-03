@@ -9,19 +9,19 @@ package Model;
  *
  * @author kevin
  */
-public class Productos {
+public class Producto {
     int idProducto;
     String nombreProducto;
     String descripcionLarga;
     String descripcionCorta;
 
-    public Productos(String nombreProducto, String descripcionLarga, String descripcionCorta) {
+    public Producto(String nombreProducto, String descripcionLarga, String descripcionCorta) {
         this.nombreProducto = nombreProducto;
         this.descripcionLarga = descripcionLarga;
         this.descripcionCorta = descripcionCorta;
     }
 
-    public Productos(int idProducto, String nombreProducto, String descripcionLarga, String descripcionCorta) {
+    public Producto(int idProducto, String nombreProducto, String descripcionLarga, String descripcionCorta) {
         this.idProducto = idProducto;
         this.nombreProducto = nombreProducto;
         this.descripcionLarga = descripcionLarga;

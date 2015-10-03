@@ -6,6 +6,7 @@
 package DAO;
 
 import Model.Usuario;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 
 /**
@@ -14,6 +15,13 @@ import java.sql.Connection;
  */
 public class UsuarioDao {
     public static void insertar(Usuario U){
+        ConnectionPool pool =null;
+        pool.getConnection();
+        
+        CallableStatement cs=null;
+        
+        
         
     }
+    
 }

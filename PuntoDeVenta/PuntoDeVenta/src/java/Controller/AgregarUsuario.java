@@ -5,6 +5,8 @@
  */
 package Controller;
 
+import DAO.UsuarioDao;
+import Model.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -38,6 +40,10 @@ public class AgregarUsuario extends HttpServlet {
             String password = request.getParameter("Contraseña");
             String empresa = request.getParameter("empresa");
 
+            Usuario u=new Usuario(mail, password, empresa, nombre);
+            
+            UsuarioDao.insertar(u);
+            
             if (nombre.equals("kevin") && mail.equals("kevin_123kaft@hotmail.com")) {
                 RequestDispatcher disp = getServletContext().getRequestDispatcher("index.jsp");
                 disp.forward(request, response);

@@ -10,21 +10,26 @@ package Model;
  * @author kevin
  */
 public class Usuario {
+
     int idUsuario;
     String nombreUsuario;
     String apellidoMterno;
     String apellidoPaterno;
     String CURP;
     String colonia;
-     String calle;
+    String calle;
     String Estado;
     int nivelDeStudios;
     String contraseña;
     String email;
-    
-    public Usuario(String email,String contraseña,String empresa){
+    String empresa;
+
+    public Usuario(String email, String contraseña, String empresa, String nombre) {
+        this.nombreUsuario = nombre;
+        this.email = email;
+        this.empresa = empresa;
     }
-    
+
     public Usuario(String nombreUsuario, String apellidoMterno, String apellidoPaterno, String CURP, String colonia, String calle, String Estado, int nivelDeStudios, String contraseña, String email) {
         this.nombreUsuario = nombreUsuario;
         this.apellidoMterno = apellidoMterno;
@@ -37,8 +42,6 @@ public class Usuario {
         this.contraseña = contraseña;
         this.email = email;
     }
-    
-    
 
     public int getNivelDeStudios() {
         return nivelDeStudios;
@@ -63,8 +66,7 @@ public class Usuario {
     public void setCorreo(String email) {
         this.email = email;
     }
-  
-    
+
     public int getIdUsuario() {
         return idUsuario;
     }
@@ -128,7 +130,5 @@ public class Usuario {
     public void setEstado(String Estado) {
         this.Estado = Estado;
     }
-   
-   
-    
+
 }
