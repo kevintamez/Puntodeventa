@@ -78,7 +78,7 @@ ul,ol{
 .nav li a:hover{
     background-color: firebrick;
 }
-//Tabla
+/*Tabla*/
 
 table, td, th {
 
@@ -98,11 +98,11 @@ th {
 
 
 
-//Pagina de cobro
+/*Pagina de cobro*/
 
 #body
 {
-    //margin: 0px;
+    /*margin: 0px;*/
     overflow: hidden;
     background: url("http://2.bp.blogspot.com/-eqhk4vM4DEc/T_3Qjx3BcSI/AAAAAAAACGc/vG8egd1JN8I/s1600/yellowish_light_brown_tileable_texture.jpg"); /*http://www.myrnasandnesbestbooks.com/wp-content/uploads/2014/05/repeating_light_gray_texture.jpg*/
 }
@@ -168,7 +168,7 @@ th {
 
 #sliderMain 
 {
-    //width: 50%;
+    /*width: 50%;*/
     margin-left: 50px;
     float: left;
 }
@@ -179,7 +179,7 @@ th {
     height: 400px;
 }
 
-//RESET
+/*RESET*/
 
 * {
     margin: 0;
@@ -233,7 +233,7 @@ and open the template in the editor.
     Author     : kevin
 */
 
-//Menu
+/*Menu*/
 #menu
 {
     width: 10%;
