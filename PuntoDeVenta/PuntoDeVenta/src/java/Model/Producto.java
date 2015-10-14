@@ -14,11 +14,13 @@ public class Producto {
     String nombreProducto;
     String descripcionLarga;
     String descripcionCorta;
+    int cantidad;
 
-    public Producto(String nombreProducto, String descripcionLarga, String descripcionCorta) {
+    public Producto(String nombreProducto, String descripcionLarga, String descripcionCorta, int cantidad) {
         this.nombreProducto = nombreProducto;
         this.descripcionLarga = descripcionLarga;
         this.descripcionCorta = descripcionCorta;
+        this.cantidad = cantidad;
     }
 
     public Producto(int idProducto, String nombreProducto, String descripcionLarga, String descripcionCorta) {
