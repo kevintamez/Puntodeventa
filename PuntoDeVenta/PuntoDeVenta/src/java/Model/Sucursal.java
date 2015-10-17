@@ -10,6 +10,7 @@ package Model;
  * @author ray
  */
 public class Sucursal {
+<<<<<<< HEAD
     int idSucursal;
     String nombreSucursal;
     int numeroExtSucursal;
@@ -114,6 +115,21 @@ public class Sucursal {
     public void setIdEmpresa(int idEmpresa) {
         this.idEmpresa = idEmpresa;
     }
+=======
+    String nombreSucursal;
+    String direccionSucursal;
+    String calleSucursal;
+    int numeroSucursal;
+    int idEmpresa;
+
+    public Sucursal(String nombreSucursal, String direccionSucursal, String calleSucursal, int numeroSucursal, int idEmpresa) {
+        this.nombreSucursal = nombreSucursal;
+        this.direccionSucursal = direccionSucursal;
+        this.calleSucursal = calleSucursal;
+        this.numeroSucursal = numeroSucursal;
+        this.idEmpresa = idEmpresa;
+    }
+>>>>>>> master
     
     
 }
