@@ -8,6 +8,10 @@
         <servlet-name>AgregarProducto</servlet-name>
         <servlet-class>Controller.AgregarProducto</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListaEmpresaServlet</servlet-name>
+        <servlet-class>Controller.ListaEmpresaServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AgregarUsuario</servlet-name>
         <url-pattern>/AgregarUsuario</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>AgregarProducto</servlet-name>
         <url-pattern>/AgregarProducto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListaEmpresaServlet</servlet-name>
+        <url-pattern>/ListaEmpresaServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

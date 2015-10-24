@@ -14,6 +14,7 @@ import java.io.InputStream;
 public class Empresa {
     int idEmpresa;
     String nombreEmpresa;
+    String sloganEmpresa;
     InputStream logoEmpresa;
     InputStream imagenEmpresa;
 
@@ -33,9 +34,15 @@ public class Empresa {
     public int getIdEmpresa() {
         return idEmpresa;
     }
-
+    
     public void setIdEmpresa(int idEmpresa) {
         this.idEmpresa = idEmpresa;
+    }
+    public String getsloganEmpresa(){
+        return sloganEmpresa;
+    }
+    public void setsloganEmpresa(String sloganEmpresa){
+        this.sloganEmpresa=sloganEmpresa;
     }
 
     public String getNombreEmpresa() {
