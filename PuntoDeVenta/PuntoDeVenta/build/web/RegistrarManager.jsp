@@ -40,7 +40,12 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" name="empresa" placeholder="Nombre de la empresa" />
+                        <input type="text" name="nombreempresa" placeholder="Nombre de la empresa" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" name="nombreSucursal" placeholder="Nombre de la sucursal" />
                     </td>
                 </tr>
                 <tr>

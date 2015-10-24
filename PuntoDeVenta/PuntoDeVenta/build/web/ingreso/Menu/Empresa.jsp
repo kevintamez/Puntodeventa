@@ -16,10 +16,10 @@
         <h1 class="h1header">Empresa</h1>
         
         <Div class="center">
-            <form action="Cajero.jsp" method="post">
+            <form action="ListaEmpresaServlet" method="post" enctype="multipart/form-data">
                 <table>
                     <th>Empresa</th>
-                    <tr>
+                    <tr>    
                         <td><input type="text" name="nombreEmpresa" placeholder="Nombre" /></td>
 
 
