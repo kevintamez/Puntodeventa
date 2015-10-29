@@ -38,10 +38,10 @@ public class AgregarUsuario extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             String mail = request.getParameter("mail");
-            String usuarioNombre = request.getParameter("nombre");
-            String password = request.getParameter("Contraseña");
-            String empresaNombre = request.getParameter("empresa");
-            String sucursalNombre= request.getParameter("sucursal");
+            String usuarioNombre = request.getParameter("Nombrelogin");
+            String password = request.getParameter("Contrasenia");
+            String empresaNombre = request.getParameter("nombreempresa");
+            String sucursalNombre= request.getParameter("nombreSucursal");
             
             Usuario u=new Usuario(usuarioNombre,mail, password);
             

@@ -97,8 +97,8 @@ begin
 	update
 END %%
 delimiter %%
-create procedure ModificarEmpleado(
+create procedure modificarProducto(
 )
 begin
-	
+	update
 end %%
