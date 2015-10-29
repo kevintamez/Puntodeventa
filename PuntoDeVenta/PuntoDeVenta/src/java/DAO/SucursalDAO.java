@@ -21,6 +21,7 @@ public class SucursalDAO {
         try {
             cs = connection.prepareCall("{ call Sucursal_agregar(?, ?, ?, ?) }");
             cs.setString(1, S.getNombreSucursal());
+            //cs.setString(2,)
             //Pendientes DATOS
            
             cs.execute();
