@@ -34,8 +34,7 @@ public class AgregarUsuario extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        
             /* TODO output your page here. You may use following sample code. */
             String mail = request.getParameter("mail");
             String usuarioNombre = request.getParameter("Nombrelogin");
@@ -44,14 +43,15 @@ public class AgregarUsuario extends HttpServlet {
             String sucursalNombre= request.getParameter("nombreSucursal");
             
             Usuario u=new Usuario(usuarioNombre,mail, password);
-            
             Empresa e=new Empresa(empresaNombre);
             Sucursal s= new Sucursal(sucursalNombre);
             
             UsuarioDao.insertarUsuarioSucursalEmpresa(u,e,s);
             
-            
-        }
+             RequestDispatcher disp = getServletContext().
+                    getRequestDispatcher("/ingreso/Menu/PrincipalManager.jsp");
+                disp.forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

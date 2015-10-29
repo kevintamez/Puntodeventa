@@ -39,19 +39,20 @@ BEGIN
             
             select idEmpresa into IDEMPRESATEMP
             from empresa 
-            where nombreEmpresa=TnombreEmpresa;
+            where nombreEmpresa=TnombreEmpresa
+            limit 1;
             
 			insert into sucursal(nombreSucursal, idEmpresa) values(TnombreSucursal,IDEMPRESATEMP);
             
             select idSucursal into IDSUCURSALTEMP
             from sucursal
-            where nombreSucursal=TnombreSucursal;
+            where nombreSucursal=TnombreSucursal
+            limit 1;
             
-			insert into usuario(email,nombre,contraseña,idSucursal) values(Temail, Tnombre, Tcontraseña,IDSUCURSALTEMP);
+			insert into usuario(email,nombreUsuario,contraseña,idSucursal) values(Temail, Tnombre, Tcontraseña,IDSUCURSALTEMP);
             
 			
-END
-  &&
+END &&
 
 delimiter &&
 create procedure Video_agregar(
@@ -85,20 +86,41 @@ BEGIN
                 
 END %%
 
-delimiter %%
-create procedure EditarEmpresa(
-TnombreEmpresa varchar(25),
-TlogoEmpresa mediumBlob,
-TimagenEMpresa1 mediumBlob,
-Tslogan varchar(50),
-TidEMpre int
-)
-begin
-	update
-END %%
-delimiter %%
+DELIMITER &&
 create procedure modificarProducto(
+TnombreProducto varchar(50),
+TdescripcionLarga text,
+TdescripcionCorta varchar(50),
+Tprecio double,
+TimagenProducto mediumblob,
+TidDepartamento int,
+TidProducto int)
+BEGIN
+update producto
+set
+	nombreProducto=TnombreProducto,
+    descripcionLarga=TdescripcionLarga,
+    descripcionCorta=TdescripcionCorta,
+    precio=Tprecio,
+    imagenProducto=TimagenProducto,
+    Departamento_id=TidDepartamento
+where idProducto=TidProducto;
+END &&
+ 
+delimiter &&
+create procedure modificarEmpresa(
+TnombreEmpresa varchar(25),
+TlogoEmpresa mediumblob,
+TimagenEmpresa1 mediumblob,
+TsloganEmpresa varchar(50),
+TidEmpresa int
 )
-begin
-	update
-end %%
+BEGIN
+	update empresa
+    set nombreEmpresa=TnombreEmpresa,
+		logoEmpresa = TlogoEmpresa,
+        imagenEmpresa1=TimagenEmpresa1
+    where idEmpresa=TnombreEmpresa;
+END &&
+
+

@@ -5,11 +5,11 @@
             logAbandoned="true" 
             maxActive="100" 
             maxIdle="30" 
-            name="jdbc/PuntoDeVenta" 
+            name="jdbc/puntodeventa" 
             password="admin" 
             removeAbandoned="true" 
             removeAbandonedTimeout="60" 
             type="javax.sql.DataSource" 
-            url="jdbc:mysql://localhost:3306/demo_mvc?autoReconnect=true" 
-            username="kevin"/>
+            url="jdbc:mysql://localhost:3306/puntodeventa?autoReconnect=true" 
+            username="root"/>
 </Context>

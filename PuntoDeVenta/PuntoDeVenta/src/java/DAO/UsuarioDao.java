@@ -28,7 +28,6 @@ public class UsuarioDao {
             cs.setString(3, U.getNombreUsuario());
             cs.setString(4, U.getEmail());
             cs.setString(5, U.getContraseña());
-            cs.setString(4, null);
             
             cs.execute();
             
