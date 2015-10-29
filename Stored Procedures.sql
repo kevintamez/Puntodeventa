@@ -84,3 +84,15 @@ BEGIN
 		
                 
 END %%
+
+delimiter %%
+create procedure EditarEmpresa(
+TnombreEmpresa varchar(25),
+TlogoEmpresa mediumBlob,
+TimagenEMpresa1 mediumBlob,
+Tslogan varchar(50),
+TidEMpre int
+)
+begin
+	update
+END %%

@@ -39,10 +39,10 @@ public class AgregarUsuario extends HttpServlet {
             String nombre = request.getParameter("nombre");
             String password = request.getParameter("Contraseña");
             String empresa = request.getParameter("empresa");
-
+            String sucursal= request.getParameter("sucursal");
             Usuario u=new Usuario(mail, password, empresa, nombre);
             
-            UsuarioDao.insertar(u);
+            UsuarioDao.insertarUsuarioSucursalEmpresa(u);
             
             if (nombre.equals("kevin") && mail.equals("kevin_123kaft@hotmail.com")) {
                 RequestDispatcher disp = getServletContext().getRequestDispatcher("index.jsp");
