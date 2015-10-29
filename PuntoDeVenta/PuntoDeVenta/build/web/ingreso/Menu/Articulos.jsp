@@ -20,30 +20,30 @@
                     <th>Ingresa datos de articulo</th>
                     <tr>
                         <td>
-                            <input type="text" placeholder="Nombre del producto" />
+                            <input type="text" placeholder="Nombre del producto" name="nombreProducto" />
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="number" placeholder="codigo" /></td>
+                        <td><input type="number" placeholder="codigo" name="codigoProducto" /></td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="number" placeholder="Existencia"/>
+                            <input type="number" placeholder="Existencia" name="existencia"/>
 
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="number" placeholder="Precio público"/>
+                            <input type="number" placeholder="Precio público" name="precioPublico"/>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" placeholder="Unidad de Medida" />
+                            <input type="text" placeholder="Unidad de Medida" name="unidadDeMedida" />
                         </td>
                     </tr>
                     <tr>
-                        <td>Imagen del articulo <input type="file" /></td>
+                        <td>Imagen del articulo <input type="file" name="imagenProducto" /></td>
                     </tr>
                     <tr>
                         <td>

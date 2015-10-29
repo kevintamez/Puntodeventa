@@ -23,6 +23,9 @@ public class Usuario {
     String contraseña;
     String email;
     String empresa;
+    byte sexo;
+    Sucursal sucursal;
+    
 
     public Usuario(String email, String contraseña, String empresa, String nombre) {
         this.nombreUsuario = nombre;
@@ -41,6 +44,14 @@ public class Usuario {
         this.nivelDeStudios = nivelDeStudios;
         this.contraseña = contraseña;
         this.email = email;
+    }
+
+    public Sucursal getSucursal() {
+        return sucursal;
+    }
+
+    public void setSucursal(Sucursal sucursal) {
+        this.sucursal = sucursal;
     }
 
     public int getNivelDeStudios() {
@@ -129,6 +140,10 @@ public class Usuario {
 
     public void setEstado(String Estado) {
         this.Estado = Estado;
+    }
+
+    public byte getSexo() {
+        return sexo;
     }
 
 }

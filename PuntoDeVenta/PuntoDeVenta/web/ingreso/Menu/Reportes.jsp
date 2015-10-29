@@ -4,6 +4,9 @@
     Author     : kevin
 --%>
 
+<%@page import="Model.Sucursal"%>
+<%@page import="java.util.List"%>
+<%@page import="Model.Departamento"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@include file="Menu.jsp"%>
 <!DOCTYPE html>
@@ -17,21 +20,55 @@
         <h1 class="h1header">Reporte general</h1>
         <div class="center">
             <form action="">
-                
+
                 <input type="date"name="inicio" /> al: <input type="date" name="fin" />
-                <select name="filtroSelect" id="Filtro">
-                    <option value="Sucursal">Sucursal</option>
-                    <option value="Departamento">Departamento</option>
-                    <option value="Cajero">Cajero</option>
-                    <option value="MetodoDePago">Metodo de pago</option>
+                
+                <select name="filtroSucursal" id="">
+                    <%
+                                List<Sucursal> departamentos = (List<Sucursal>) request.getAttribute("sucursal");
+                                if (departamentos != null) {
+                                    for (Sucursal suc : departamentos) {
+                            %>
+                                        <option value="<%= suc.getIdSucursal()%>"
+                                                
+                                                ><%= suc.getNombreSucursal()%>
+                                        </option>
+                            <%
+                                    }
+                                }
+                            %>
                 </select>
+                
+                <select name="departamento">                            
+                            <%
+                                List<Departamento> departamentos = (List<Departamento>) request.getAttribute("departamentos");
+                                if (departamentos != null) {
+                                    for (Departamento depto : departamentos) {
+                            %>
+                                        <option value="<%= depto.getIdDepartamento()%>"
+                                                <%= emp != null && emp.getDepartamento().getId() == depto.getId() ? "selected" : "" %>
+                                                ><%= depto.getNombreDepartamento()%>
+                                        </option>
+                            <%
+                                    }
+                                }
+                            %>
+                            <!--<option value="1">Mantenimiento</option>
+                            <option value="2">Tesorería</option>
+                            <option value="3">Dirección</option>
+                            <option value="4">Recursos humanos</option>
+                            <option value="5">CSI</option>
+                            <option value="6">Escolar</option>
+                            <option value="7">Compras</option>-->
+                        </select>
+                
             </form>
-            
+
             <table>
                 <th>Reportes 
-                    
+
                 </th>
-                
+
                 <tr>
                     <td>Fecha de venta</td>
                     <td>Sucursal</td>
@@ -46,6 +83,18 @@
                     <td>Subtotal</td>
                     <td>Metodo de pago</td>
                 </tr>
+            </table>
+
+            <table>
+
+                <th>Articulos</th>
+                <tr>
+                    <td>nombre</td>
+                    <td>descripcion corta</td>
+                    <td>editar</td>
+                </tr>
+
+
             </table>
         </div>
     </body>

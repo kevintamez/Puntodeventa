@@ -25,13 +25,12 @@ delimiter &&
 
 delimiter &&
 create procedure ManagerEmpresaSucursal(
-Temail varchar(50),
-Tnombre varchar(50),
-Tcontraseña varchar(50),
-TnombreSucursal varchar(25),
 TnombreEmpresa varchar(25),
-TidUsuario int,
-opc varchar(10)
+TnombreSucursal varchar(25),
+Tnombre varchar(50),
+Temail varchar(50),
+Tcontraseña varchar(50)
+
 ) 
 BEGIN
 	DECLARE IDEMPRESATEMP int;
@@ -46,18 +45,17 @@ BEGIN
             
             select idSucursal into IDSUCURSALTEMP
             from sucursal
-            where nombreSucursal=TnombreSucursal
+            where nombreSucursal=TnombreSucursal;
 			insert into usuario(email,nombre,contraseña,idSucursal) values(Temail, Tnombre, Tcontraseña,IDSUCURSALTEMP);
             
 			
 END
-delimiter &&
+  &&
 
-
 delimiter &&
-create procedure agregarVideo(
+create procedure Video_agregar(
 nombreVideo varchar(50),
-duraciónVideo time
+duraciónVideo time,
 inicioPlay datetime,
 finPlay datetime,
 imagenVideo tinyblob)
@@ -66,25 +64,22 @@ BEGIN
 finPlay datetime,
 imagenVideo tinyblob)
 END
-delimiter &&
+ &&
 
 
 
 delimiter %%
-create procedure Empresa(
-		TidEmpresa int,
+create procedure Empresa_agregar(
+		
 		TnombreEmpresa varchar(25),
-		TsloganEmpresa varchar(100),
-		TimagenEmpresa1 mediumblob,
-		TlogoEmpresa mediumblob,
-		opc int
+        TlogoEmpresa mediumblob,
+        TimagenEmpresa1 mediumblob,
+		TsloganEmpresa varchar(100)
 )
 BEGIN
-		if opc=1 then
+		
 		 insert into empresa(nombreEmpresa,logoEmpresa,imagenEmpresa1,sloganEmpresa)
-						values(TnombreEmpresa,TlogoEmpresa,TimagenEmpresa1,TsloganEmpresa)
-		if opc=2 then 
-		 update empresa where idEmpresa=fidEmpresa
+						values(TnombreEmpresa,TlogoEmpresa,TimagenEmpresa1,TsloganEmpresa);
+		
                 
-END
-delimiter %%
+END %%
