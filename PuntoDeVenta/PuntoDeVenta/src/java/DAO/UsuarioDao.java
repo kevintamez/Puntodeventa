@@ -56,5 +56,26 @@ public class UsuarioDao {
         }
     }
     
-    
+     public static void actualizar(Usuario u) {
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection connection = pool.getConnection();
+        CallableStatement cs = null;
+        try {
+            cs = connection.prepareCall("{ call actualizar_usuario(?, ?, ?, ?, ?, ?) }");
+            cs.setString(1, u.getNombreUsuario());
+            cs.setString(2, u.getApellidoPaterno());
+            cs.setString(3, u.getApellidoMterno());
+            cs.setByte(4, u.getSexo());
+            cs.setInt(5, u.getSucursal().getIdSucursal());
+            cs.setInt(6, u.getIdUsuario());
+            cs.execute();
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            
+        } finally {
+            DBUtil.closeStatement(cs);
+            pool.freeConnection(connection);
+        }
+}
 }

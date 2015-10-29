@@ -15,6 +15,7 @@ public class Producto {
     String descripcionLarga;
     String descripcionCorta;
     int cantidad;
+    private Departamento departamento;
 
     public Producto(String nombreProducto, String descripcionLarga, String descripcionCorta, int cantidad) {
         this.nombreProducto = nombreProducto;
@@ -63,4 +64,21 @@ public class Producto {
     public void setDescripcionCorta(String descripcionCorta) {
         this.descripcionCorta = descripcionCorta;
     }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Departamento getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(Departamento departamento) {
+        this.departamento = departamento;
+    }
+    
 }

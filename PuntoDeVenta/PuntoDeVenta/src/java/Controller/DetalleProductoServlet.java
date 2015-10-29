@@ -5,10 +5,7 @@
  */
 package Controller;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author kevin
  */
-public class ListaEmpresaServlet extends HttpServlet {
+public class DetalleProductoServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,20 +30,7 @@ public class ListaEmpresaServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-       
-       String nombre= request.getParameter("nombreEmpresa");
-       String Slogan=request.getParameter("Slogan");
-       
-       InputStream in = request.getInputStream();
-	BufferedReader r = new BufferedReader(new InputStreamReader(in));
-	StringBuilder buf = new StringBuilder();
-	String line;
-
-	//Read the BufferedReader out and receives String data
-	while ((line = r.readLine())!=null) {
-		buf.append(line);
-	}
-	String imageString = buf.toString();
+        String nombre=request.getParameter("nombreProducto");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
