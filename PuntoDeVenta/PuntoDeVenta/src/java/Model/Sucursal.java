@@ -31,7 +31,10 @@ public class Sucursal {
         this.numeroSucursal = numeroSucursal;
         this.idEmpresa = idEmpresa;
     }
-
+    public Sucursal(String nombre)
+    {   
+        this.nombreSucursal=nombre;
+    }
     public Sucursal(String nombreSucursal, int numeroExtSucursal, String calleSucursal, String coloniaSucursal, int codigoPostalSucursal, int idMunicipio, int numeroSucursal, int idEmpresa) {
         this.nombreSucursal = nombreSucursal;
         this.numeroExtSucursal = numeroExtSucursal;

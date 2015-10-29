@@ -5,6 +5,8 @@
  */
 package DAO;
 
+import Model.Empresa;
+import Model.Sucursal;
 import Model.Usuario;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -15,16 +17,18 @@ import java.sql.Types;
  * @author kevin
  */
 public class UsuarioDao {
-    public static void insertar(Usuario U){
+    public static void insertarUsuarioSucursalEmpresa(Usuario U,Empresa E, Sucursal S){
        ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         CallableStatement cs = null;
         try {
-            cs = connection.prepareCall("{ call UsuarioInsertar(?, ?, ?, ?, ?) }");
-            cs.setString(1, U.getNombreUsuario());
-            cs.setString(2, U.getApellidoPaterno());
-            cs.setString(3, U.getApellidoMterno());
-            
+            cs = connection.prepareCall("{ call ManagerEmpresaSucursal(?, ?, ?, ?, ?) }");
+            cs.setString(1, E.getNombreEmpresa());
+            cs.setString(2, S.getNombreSucursal());
+            cs.setString(3, U.getNombreUsuario());
+            cs.setString(4, U.getEmail());
+            cs.setString(5, U.getContraseña());
+            cs.setString(4, null);
             
             cs.execute();
             

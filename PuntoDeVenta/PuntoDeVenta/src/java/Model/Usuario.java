@@ -43,6 +43,12 @@ public class Usuario {
         this.email = email;
     }
 
+    public Usuario(String usuarioNombre, String mail, String password) {
+        this.nombreUsuario=usuarioNombre;
+        this.email=mail;
+        this.contraseña=password;
+    }
+
     public int getNivelDeStudios() {
         return nivelDeStudios;
     }

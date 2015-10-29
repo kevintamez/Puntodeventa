@@ -96,3 +96,9 @@ TidEMpre int
 begin
 	update
 END %%
+delimiter %%
+create procedure ModificarEmpleado(
+)
+begin
+	
+end %%
