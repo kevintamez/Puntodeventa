@@ -24,7 +24,9 @@ public class Empresa {
         this.logoEmpresa = logoEmpresa;
         this.imagenEmpresa = imagenEmpresa;
     }
-
+    public Empresa(String nombre){
+        this.nombreEmpresa=nombre;
+    }
     public Empresa(String nombreEmpresa, InputStream logoEmpresa, InputStream imagenEmpresa) {
         this.nombreEmpresa = nombreEmpresa;
         this.logoEmpresa = logoEmpresa;

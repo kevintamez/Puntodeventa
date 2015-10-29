@@ -6,6 +6,8 @@
 package Controller;
 
 import DAO.UsuarioDao;
+import Model.Empresa;
+import Model.Sucursal;
 import Model.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,20 +38,19 @@ public class AgregarUsuario extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             String mail = request.getParameter("mail");
-            String nombre = request.getParameter("nombre");
-            String password = request.getParameter("Contraseña");
-            String empresa = request.getParameter("empresa");
-            String sucursal= request.getParameter("sucursal");
-            Usuario u=new Usuario(mail, password, empresa, nombre);
+            String usuarioNombre = request.getParameter("Nombrelogin");
+            String password = request.getParameter("Contrasenia");
+            String empresaNombre = request.getParameter("nombreempresa");
+            String sucursalNombre= request.getParameter("nombreSucursal");
             
-            UsuarioDao.insertarUsuarioSucursalEmpresa(u);
+            Usuario u=new Usuario(usuarioNombre,mail, password);
             
-            if (nombre.equals("kevin") && mail.equals("kevin_123kaft@hotmail.com")) {
-                RequestDispatcher disp = getServletContext().getRequestDispatcher("index.jsp");
-                disp.forward(request, response);
-            }else {
-                response.sendRedirect("Cobro.jsp");
-            }
+            Empresa e=new Empresa(empresaNombre);
+            Sucursal s= new Sucursal(sucursalNombre);
+            
+            UsuarioDao.insertarUsuarioSucursalEmpresa(u,e,s);
+            
+            
         }
     }
 

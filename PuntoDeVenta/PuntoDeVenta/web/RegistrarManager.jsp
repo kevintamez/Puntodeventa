@@ -29,18 +29,18 @@
                 
                 <tr>
                     <td>
-                          <input type="text" name="Nombrelogin" placeholder="Nombre" /><br>
+                          <input type="text" name="Nombrelogin" placeholder="nombre" /><br>
                     </td>
                 </tr>
                 
                 <tr>
                     <td>
-                         <input type="password" name="Contraseña" placeholder="Contraseña" /><br>
+                         <input type="password" name="Contrasenia" placeholder="Contraseña" /><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" name="nombreempresa" placeholder="Nombre de la empresa" />
+                        <input type="text"  placeholder="Nombre de la empresa" name="nombreempresa" />
                     </td>
                 </tr>
                 <tr>
