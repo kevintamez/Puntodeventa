@@ -18,12 +18,14 @@ public class MultimediaDao {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection connection = pool.getConnection();
         CallableStatement cs = null;
+        
         try {
             cs = connection.prepareCall("{ call insertarvideo(?, ?, ?) }");
             cs.setString(1, M.getDescripcion());
             cs.setString(2, M.getUbicacion());
             cs.setString(3, M.getTipo());
             cs.execute();
+            
             
         } catch (Exception ex) {
             ex.printStackTrace();
