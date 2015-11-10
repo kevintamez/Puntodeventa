@@ -4,8 +4,9 @@
     Author     : kevin & ray
 --%>
 
+<%@page import="Model.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="Menu.jsp"%>
+<%@include file="/ingreso/Menu/Menu.jsp"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,11 +19,16 @@
                 document.getElementById("despliega").innerHTML=x;
             }
         </script>
+        
+        
     </head>
     <body>
+        <% Usuario user = (Usuario) session.getAttribute("user"); %>
+           
         <h1 class="h1header">Listado</h1>
         <div class="der">
-            <a class="icon-account-box" href="Manager.jsp">Mis Datos</a>
+            <a class="icon-account-box" href="
+                <%= request.getServletContext().getContextPath()%>/DetalleUsuario?accion=buscar&id=<%= user.getIdUsuario()%>">Mis Datos <%= user.getEmail()%>  </a>
         </div>
 
         <div class="center">
@@ -94,7 +100,7 @@
                 </tr>
             </table>
             <br />
-            
+            <a href="AgregarVideo.jsp">Agregar video</a>
                 <table>
                     <th>Horario de videos</th>
                     <tr>

@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="Menu.jsp"%>
+<%@include file="/ingreso/Menu/Menu.jsp"%>
 <!DOCTYPE html>
 
 <html>

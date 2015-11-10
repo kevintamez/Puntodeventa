@@ -10,11 +10,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Bienvenido</title>
-        <link rel="stylesheet" href="Css/Estilo.css" />
+        <link rel="stylesheet" 
+              href="Css/Estilo.css" />
         <script type="text/javascript">
-            function valida(){
-                var a="Su cuenta no está registrada";
-                alert(a);
+            function valida()
+            {
+
             }
         </script>
     </head>
@@ -24,28 +25,32 @@
            <div class="Logo">
                <img src="Cobro/img/logo-01.png" alt="Logo empresa" align="middle"/>
            </div>
-             <form action="#" method="post">
+           <form action="login" method="post" onsubmit="return valida()">
             <table>
                 <th>
                      Login
                 </th>
                 <tr>
-                <td><input type="text" name="Correo" placeholder="Correo"/></td>
+                    <td><input type="email" name="correo" id="email" required="Comleta correo" placeholder="Correo"/></td>
                 </tr>
-                <tr><td><input type="password" name="contraseña" placeholder="Contraseña" /></td>
+                <tr><td><input type="password" name="contrasenia"  required="Comleta contraseña" id="pass" placeholder="Contraseña" /></td>
                 </tr>
+                
                 <tr>
-                    <td><input type="submit" value="Acceder" onclick="valida()"/></td>
+                    <td><input type="submit" value="Acceder" /></td>
                 </tr>
                 <tr>
                     <td>
                         <a href="RegistrarManager.jsp">Registrarse</a>
                     </td>
+                </tr>
+                <tr>
                     <td>
-                        <a href="Cobro/Cobro.jsp">Pagina de cobro</a>
+                        <% if (request.getAttribute("mensaje") != null) { %>
+            <div style="color: red"><%= request.getAttribute("mensaje") %> </div>
+                        <% } %>
                     </td>
                 </tr>
-                
             </table>
         </form>
         </div>

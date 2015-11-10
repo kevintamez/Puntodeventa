@@ -35,23 +35,41 @@ public class AgregarUsuario extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-            /* TODO output your page here. You may use following sample code. */
-            String mail = request.getParameter("mail");
-            String usuarioNombre = request.getParameter("Nombrelogin");
-            String password = request.getParameter("Contrasenia");
-            String empresaNombre = request.getParameter("nombreempresa");
-            String sucursalNombre= request.getParameter("nombreSucursal");
-            
-            Usuario u=new Usuario(usuarioNombre,mail, password);
-            Empresa e=new Empresa(empresaNombre);
-            Sucursal s= new Sucursal(sucursalNombre);
-            
-            UsuarioDao.insertarUsuarioSucursalEmpresa(u,e,s);
-            
-             RequestDispatcher disp = getServletContext().
-                    getRequestDispatcher("/ingreso/Menu/PrincipalManager.jsp");
-                disp.forward(request, response);
+        String accion = request.getParameter("accion");
+        if ("insertarUsuario".equals(accion)) {
+            String nombre = request.getParameter("nombreUsuario");
+            String email = request.getParameter("EmailUsuario");
+            String contrasenia = request.getParameter("contraseniaUsuario");
+            String apellidoPaterno = request.getParameter("apellidoPaterno");
+            String apellidoMaterno = request.getParameter("apellidoMaterno");
+            String tipoUsuario = request.getParameter("Tipodeusuario");
+            String fechaDeNacimiento = request.getParameter("fechadenacimiento");
+            String nivelDeEstudios=request.getParameter("nivelDeEstudios");
+            String municipio=request.getParameter("municipio");
+            String Curp=request.getParameter("CURP");
+            String Rfc=request.getParameter("RFC");
+            String strsexo = request.getParameter("sexo");
+
+        }
+        /* TODO output your page here. You may use following sample code. */
+        String mail = request.getParameter("mail");
+        String usuarioNombre = request.getParameter("Nombrelogin");
+        String password = request.getParameter("Contrasenia");
+        String empresaNombre = request.getParameter("nombreempresa");
+        String sucursalNombre = request.getParameter("nombreSucursal");
         
+        Usuario u = new Usuario(usuarioNombre, mail, password);
+        Empresa e = new Empresa(empresaNombre);
+        Sucursal s = new Sucursal(sucursalNombre);
+
+        UsuarioDao.insertarUsuarioSucursalEmpresa(u, e, s);
+
+        RequestDispatcher disp = getServletContext().
+                getRequestDispatcher("/ingreso/Menu/Usuario.jsp");
+        disp.forward(request, response);
+        
+        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

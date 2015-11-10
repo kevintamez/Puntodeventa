@@ -15,7 +15,7 @@
 
         <!--Estilos-->
         <!--<link rel="stylesheet" href="css/reset.css">-->
-        <link rel="stylesheet" href="../Css/Estilo.css">
+        <link rel="stylesheet" href="Css/Estilo.css" />
 
         <!--Plugins-->
         <link rel="stylesheet" href="js/Nivo Slider/nivo-slider.css" />
@@ -23,7 +23,8 @@
     </head>
 
     <body id="body" style="overflow: hidden; background: url('img/repeating-vintage-paper-background.jpg');">
-        
+         <% java.util.Date now = new java.util.Date(); %>
+        <%= now %>
         <header id="header">
             <!--<img src="C:\Users\ray\Desktop\Cobro\img\fondoHeader.png" alt="Imagen de Fondo" width = "1080">-->
 
@@ -57,11 +58,11 @@
         <!--Slider-->
         <div id = "sliderMain" class = "slider-wrapper theme-dark" align = "center">
             <div id = "slider" class = "nivoSlider" align = "center">
-                <img src="../Cobro/img/Starbucks Promo 1.jpg" alt="" data-transition = "boxRainGrowReverse">
-                <img src="../Cobro/img/Starbucks Promo 2.jpg" alt="" data-transition = "boxRainGrowReverse">
-                <img src="../Cobro/img/Starbucks Promo 3.jpg" alt="" data-transition = "boxRainGrowReverse">
-                <img src="../Cobro/img/Starbucks Promo 4.jpg" alt="" data-transition = "boxRainGrowReverse">
-                <img src="../Cobro/img/Starbucks Promo 5.jpg" alt="" data-transition = "boxRainGrowReverse">
+                <img src="img/Starbucks Promo 1.jpg" alt="" data-transition = "boxRainGrowReverse">
+                <img src="/Cobro/img/Starbucks Promo 2.jpg" alt="" data-transition = "boxRainGrowReverse">
+                <img src="/Cobro/img/Starbucks Promo 3.jpg" alt="" data-transition = "boxRainGrowReverse">
+                <img src="/Cobro/img/Starbucks Promo 4.jpg" alt="" data-transition = "boxRainGrowReverse">
+                <img src="/Cobro/img/Starbucks Promo 5.jpg" alt="" data-transition = "boxRainGrowReverse">
             </div>
         </div>
         <!--/Slider-->

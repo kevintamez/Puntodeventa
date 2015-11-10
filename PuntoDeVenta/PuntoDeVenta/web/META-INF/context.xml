@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/PuntoDeVenta">
+<Context antiJARLocking="true" path="/puntodeventa">
 <Resource auth="Container" 
             driverClassName="com.mysql.jdbc.Driver" 
             logAbandoned="true" 
-            maxActive="100" 
+            maxActive="0" 
             maxIdle="30" 
-            name="jdbc/puntodeventa" 
+            name="jdbc/puntodeventa"
+            username="root" 
             password="admin" 
             removeAbandoned="true" 
-            removeAbandonedTimeout="60" 
+            removeAbandonedTimeout="1000" 
             type="javax.sql.DataSource" 
-            url="jdbc:mysql://localhost:3306/puntodeventa?autoReconnect=true" 
-            username="root"/>
+            url="jdbc:mysql://localhost:3306/puntodeventa"
+/>
 </Context>

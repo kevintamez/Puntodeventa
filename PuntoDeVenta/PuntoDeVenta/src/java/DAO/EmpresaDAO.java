@@ -35,4 +35,27 @@ public class EmpresaDAO {
             pool.freeConnection(connection);
         }
     }
+    
+    public static void actualizar(Empresa E){
+        ConnectionPool pool = ConnectionPool.getInstance();
+        Connection connection = pool.getConnection();
+        CallableStatement cs = null;
+        try {
+            cs = connection.prepareCall("{ call modificarEmpresa(?, ?, ?, ?,?) }");
+            cs.setString(1, E.getNombreEmpresa());
+            cs.setBinaryStream(2, E.getLogoEmpresa());
+            cs.setBinaryStream(3,E.getImagenEmpresa());
+            cs.setString(4, E.getsloganEmpresa());
+            cs.setInt(5, E.getIdEmpresa());
+            
+            cs.execute();
+            
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            
+        } finally {
+            DBUtil.closeStatement(cs);
+            pool.freeConnection(connection);
+        }
+    }
 }

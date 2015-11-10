@@ -24,7 +24,10 @@ public class Municipio {
         this.nombreMunicipio = nombreMunicipio;
         this.idEstado = idEstado;
     }
-
+    public Municipio(int id, String nombre){
+        this.idMunicipio=id;
+        this.nombreMunicipio=nombre;
+    }
     public int getIdMunicipio() {
         return idMunicipio;
     }

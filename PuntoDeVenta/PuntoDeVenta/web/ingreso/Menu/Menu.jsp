@@ -18,11 +18,14 @@
     <body>
         <div class="men" id = "menu">            
                 <ul>
-                    <li><a href="PrincipalManager.jsp" class="icon-view-headline"><div class="show">Home</div></a></li>
-                    <li><a href="Empresa.jsp" class="icon-account-child"><div class="show">Empresa</div></a></li>
-                    <li><a href="Articulos.jsp" class="icon-assignment"><div class="show">Articulo</div></a></li>
-                    <li><a href="Cajero.jsp" class="icon-add-user"><div class="show">Cajero</div></a></li>
-                    <li><a href="Reportes.jsp" class="icon-text-document" ><div class="show">Reportes</div></a></li>
+                    <li><a href="ingreso/Menu/PrincipalManager.jsp" class="icon-view-headline"><div class="show">Home</div></a></li>
+                    <li><a href="ingreso/Menu/Empresa.jsp" class="icon-account-child"><div class="show">Empresa</div></a></li>
+                    <li><a href="ingreso/Menu/Articulos.jsp" class="icon-assignment"><div class="show">Articulo</div></a></li>
+                    <li><a href="ingreso/Menu/Usuario.jsp" class="icon-add-user"><div class="show">Usuario</div></a></li>
+                    <li><a href="ingreso/Menu/Reportes.jsp" class="icon-text-document" ><div class="show">Reportes</div></a></li>
+                    <%--
+                       <li><a href="/ingreso/Menu/Empresa.jsp" class="icon-account-child"><div class="show">Empresa</div></a></li>
+                    --%>
                 </ul>          
         </div>
 

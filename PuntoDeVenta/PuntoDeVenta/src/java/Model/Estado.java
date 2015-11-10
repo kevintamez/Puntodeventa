@@ -14,10 +14,9 @@ public class Estado {
     String nombreEstado;
     int idPais;
 
-    public Estado(int idEstado, String nombreEstado, int idPais) {
+    public Estado(int idEstado, String nombreEstado) {
         this.idEstado = idEstado;
         this.nombreEstado = nombreEstado;
-        this.idPais = idPais;
     }
 
     public Estado(String nombreEstado, int idPais) {

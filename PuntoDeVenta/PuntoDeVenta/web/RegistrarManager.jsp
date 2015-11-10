@@ -12,40 +12,49 @@
         <title>JSP Page</title>
         <link rel="stylesheet" href="Css/Estilo.css" />
         <script type="text/javascript">
-           
+            function valida(){
+                
+           var pass = document.getElementById('pass').value; 
+                    if(pass.length<=8) {
+                        alert ('minimo de 8 caracteres');
+                        return false;
+                    } else {
+                        return true;
+                    }
+                }
         </script>
     </head>
     <body>
         <div class="blockpage">
             
-            <form action="AgregarUsuario" method="post" >
+            <form action="AgregarUsuario" method="post" onsubmit="return valida()">
                <table>
                 <th>Datos de manager</th>
                 <tr>
                     <td>
-                          <input type="text" name="mail" placeholder="Mail"/><br>
+                        <input type="email" name="mail"  placeholder="Mail"/><br>
                     </td>
                 </tr>
                 
                 <tr>
                     <td>
-                          <input type="text" name="Nombrelogin" placeholder="nombre" /><br>
+                        <input type="text" required="" name="Nombrelogin" placeholder="nombre" /><br>
                     </td>
                 </tr>
                 
                 <tr>
                     <td>
-                         <input type="password" name="Contrasenia" placeholder="Contraseña" /><br>
+                        <input type="password"  required="" id="pass" name="Contrasenia" placeholder="Contraseña" /><br>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="text"  placeholder="Nombre de la empresa" name="nombreempresa" />
+                        <input type="text"  required="" placeholder="Nombre de la empresa" name="nombreempresa" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" name="nombreSucursal" placeholder="Nombre de la sucursal" />
+                        <input type="text" required="" name="nombreSucursal" placeholder="Nombre de la sucursal" />
                     </td>
                 </tr>
                 <tr>
