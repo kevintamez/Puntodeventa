@@ -19,15 +19,16 @@ public class ProductoDao {
         Connection connection = pool.getConnection();
         CallableStatement cs = null;
         try {
-            cs = connection.prepareCall("{ call Empresa_agregar(?, ?, ?, ?) }");
+            cs = connection.prepareCall("{ call insertarProducto(?, ?, ?, ?, ?, ?) }");
             cs.setString(1, P.getNombreProducto());
-            //Pendiente
-           
-            cs.execute();
-            
+            cs.setString(2, P.getDescripcionLarga());
+            cs.setString(3, P.getDescripcionCorta());
+            cs.setInt(4, P.getPrecio());
+            cs.setBinaryStream(5, P.getImagenProducto());
+            cs.setInt(6, P.getDepartamento().getIdDepartamento());           
+            int res = cs.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();
-            
         } finally {
             DBUtil.closeStatement(cs);
             pool.freeConnection(connection);

@@ -5,10 +5,6 @@
         <servlet-class>Controller.AgregarUsuario</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AgregarProducto</servlet-name>
-        <servlet-class>Controller.AgregarProducto</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ListaEmpresaServlet</servlet-name>
         <servlet-class>Controller.ListaEmpresaServlet</servlet-class>
     </servlet>
@@ -16,13 +12,17 @@
         <servlet-name>DetalleProductoServlet</servlet-name>
         <servlet-class>Controller.DetalleProductoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AgregarProductos</servlet-name>
+        <servlet-class>Controller.AgregarProductos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AgregarProducto</servlet-name>
+        <servlet-class>Controller.AgregarProducto</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AgregarUsuario</servlet-name>
         <url-pattern>/AgregarUsuario</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AgregarProducto</servlet-name>
-        <url-pattern>/AgregarProducto</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListaEmpresaServlet</servlet-name>
@@ -31,6 +31,14 @@
     <servlet-mapping>
         <servlet-name>DetalleProductoServlet</servlet-name>
         <url-pattern>/DetalleProducto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AgregarProductos</servlet-name>
+        <url-pattern>/AgregarProductos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AgregarProducto</servlet-name>
+        <url-pattern>/AgregarProducto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

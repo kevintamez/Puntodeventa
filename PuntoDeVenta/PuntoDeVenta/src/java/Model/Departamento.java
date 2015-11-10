@@ -22,6 +22,10 @@ public class Departamento {
         this.nombreDepartamento = nombreDepartamento;
     }
 
+    public Departamento(int idDepartamento) {
+        this.idDepartamento = idDepartamento;
+    }
+
     public int getIdDepartamento() {
         return idDepartamento;
     }

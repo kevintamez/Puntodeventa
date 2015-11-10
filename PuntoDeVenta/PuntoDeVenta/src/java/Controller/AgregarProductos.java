@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ray
  */
-public class AgregarProducto extends HttpServlet {
+public class AgregarProductos extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,7 +37,7 @@ public class AgregarProducto extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            List<Departamento> depos = DepartamentoDAO.buscarDepartamentos();
+        List<Departamento> depos = DepartamentoDAO.buscarDepartamentos();
             request.setAttribute("depos", depos);
         
             String nombreProducto = request.getParameter("nombreProducto");
@@ -56,7 +56,7 @@ public class AgregarProducto extends HttpServlet {
             ServletContext sc = getServletContext();
             RequestDispatcher disp = sc.getRequestDispatcher("/Articulos.jsp");    //FIX THIS, probably wrong!!
             disp.forward(request, response);
-    }
+        }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Model;
+import java.io.InputStream;
 
 /**
  *
@@ -14,24 +15,28 @@ public class Producto {
     String nombreProducto;
     String descripcionLarga;
     String descripcionCorta;
-    int cantidad;
+    int precio;
+    InputStream imagenProducto;
     private Departamento departamento;
 
-    public Producto(String nombreProducto, String descripcionLarga, String descripcionCorta, int cantidad) {
-        this.nombreProducto = nombreProducto;
-        this.descripcionLarga = descripcionLarga;
-        this.descripcionCorta = descripcionCorta;
-        this.cantidad = cantidad;
-    }
-
-    public Producto(int idProducto, String nombreProducto, String descripcionLarga, String descripcionCorta) {
+    public Producto(int idProducto, String nombreProducto, String descripcionLarga, String descripcionCorta, int precio, InputStream imagenProducto, Departamento departamento) {
         this.idProducto = idProducto;
         this.nombreProducto = nombreProducto;
         this.descripcionLarga = descripcionLarga;
         this.descripcionCorta = descripcionCorta;
+        this.precio = precio;
+        this.imagenProducto = imagenProducto;
+        this.departamento = departamento;
     }
-    
-    
+
+    public Producto(String nombreProducto, String descripcionLarga, String descripcionCorta, int precio, InputStream imagenProducto, Departamento departamento) {
+        this.nombreProducto = nombreProducto;
+        this.descripcionLarga = descripcionLarga;
+        this.descripcionCorta = descripcionCorta;
+        this.precio = precio;
+        this.imagenProducto = imagenProducto;
+        this.departamento = departamento;
+    }
 
     public int getIdProducto() {
         return idProducto;
@@ -65,12 +70,20 @@ public class Producto {
         this.descripcionCorta = descripcionCorta;
     }
 
-    public int getCantidad() {
-        return cantidad;
+    public int getPrecio() {
+        return precio;
     }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
+
+    public InputStream getImagenProducto() {
+        return imagenProducto;
+    }
+
+    public void setImagenProducto(InputStream imagenProducto) {
+        this.imagenProducto = imagenProducto;
     }
 
     public Departamento getDepartamento() {
